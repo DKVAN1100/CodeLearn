@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\zDATA\\CodeLearn\\Search\\Search\\Search.csproj": {}
+    "C:\\zDATA\\CodeLearn\\Search\\Search.csproj": {}
   },
   "projects": {
-    "C:\\zDATA\\CodeLearn\\Search\\Search\\Search.csproj": {
+    "C:\\zDATA\\CodeLearn\\Search\\Search.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\zDATA\\CodeLearn\\Search\\Search\\Search.csproj",
+        "projectUniqueName": "C:\\zDATA\\CodeLearn\\Search\\Search.csproj",
         "projectName": "Search",
-        "projectPath": "C:\\zDATA\\CodeLearn\\Search\\Search\\Search.csproj",
+        "projectPath": "C:\\zDATA\\CodeLearn\\Search\\Search.csproj",
         "packagesPath": "C:\\Users\\Lonovo\\.nuget\\packages\\",
-        "outputPath": "C:\\zDATA\\CodeLearn\\Search\\Search\\obj\\",
+        "outputPath": "C:\\zDATA\\CodeLearn\\Search\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lonovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

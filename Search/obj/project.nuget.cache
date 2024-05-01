@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OlDkBK6FrnqC2qfqGyFD7mKuoVAM/tM6RH58lUy7v+WiOqh5v4YGKLCAU5oUdKYppo5dRN29hxA0cAc09RMuww==",
+  "dgSpecHash": "Nnd/YQVPM5FABH3k1TaDtosNutVh8HUwkT8ir99FZgXQkqTK1fhZFukTGFRHMgDIr8Zv1sJ4USn4FefXp1J6kg==",
   "success": true,
-  "projectFilePath": "C:\\zDATA\\CodeLearn\\Search\\Search\\Search.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\zDATA\\CodeLearn\\Search\\Search.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lonovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Lonovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
