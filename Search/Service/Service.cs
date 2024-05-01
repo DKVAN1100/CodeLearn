@@ -1,4 +1,5 @@
-﻿using Search.Tree;
+﻿using Search.Searchs;
+using Search.Tree;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,20 @@ namespace Search.Service
 {
     public class Service : IService
     {
+        public async Task RunBinarySearch()
+        {
+            string[] arr = { "apple", "banana", "cherry", "orange", "strawberry" };
+
+            Console.Write("Enter the string to search: ");
+            string x = Console.ReadLine();
+
+            int result = BinarySearch.BinarySearchFunc(arr, x);
+            if (result == -1)
+                Console.WriteLine("String not found");
+            else
+                Console.WriteLine("String found at position " + result);
+        }
+
         public async Task RunBinaryTree()
         {
             BinaryTree tree = new BinaryTree();

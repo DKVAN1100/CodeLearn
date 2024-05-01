@@ -9,5 +9,6 @@ namespace Search.Service
     public interface IService
     {
         Task RunBinaryTree(); 
+        Task RunBinarySearch(); 
     }
 }
