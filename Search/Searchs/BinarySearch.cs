@@ -30,6 +30,7 @@ namespace Search.Searchs
 
             // Trả về -1 nếu không tìm thấy x trong mảng
             return -1;
+
         }
     }
 }

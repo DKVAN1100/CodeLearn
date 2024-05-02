@@ -10,5 +10,6 @@ namespace Search.Service
     {
         Task RunBinaryTree(); 
         Task RunBinarySearch(); 
+        Task RunParallelSearch(); 
     }
 }
