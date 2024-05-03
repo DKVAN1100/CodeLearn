@@ -8,53 +8,32 @@ namespace Search.Searchs
 {
     public class ParallelSearch
     {
-        public static int ParallelSearchFunc(string[] arr, string x, int numThreads = 4)
+        public static int ParallelSearchFunc(string[] arr, string x, int numberThreads = 4)
         {
-            int chunkSize = arr.Length / numThreads;
+            int chunkSize = arr.Length / numberThreads;
 
-            // Tạo mảng kết quả để lưu kết quả từ mỗi luồng
-            int[] results = new int[numThreads];
+            int[] arrayResult = new int[numberThreads];
 
-            // Tạo và khởi chạy các luồng
-            Parallel.For(0, numThreads, i =>
+            Parallel.For(0, numberThreads, i =>
             {
                 int start = i * chunkSize;
-                int end = (i == numThreads - 1) ? arr.Length : start + chunkSize;
-
-                results[i] = SearchInChunk(arr, x, start, end);
+                int end = i == (numberThreads - 1) ? arr.Length : start + chunkSize;
+                arrayResult[i] = SearchFunc(arr, x, start, end);
             });
-
-            int y = results.FirstOrDefault(x => x != -1);
-            return y != null ? y : -1;
-
-            //// Kiểm tra kết quả từ mỗi luồng
-            //for (int i = 0; i < numThreads; i++)
-            //{
-            //    if (results[i] != -1)
-            //        return results[i]; // Trả về chỉ số nếu tìm thấy
-            //}
-
-            //return -1; // Trả về -1 nếu không tìm thấy phần tử
+            int res = arrayResult.FirstOrDefault(x => x != -1);
+            return res != null ? res : -1;
         }
 
-        private static int SearchInChunk(string[] arr, string x, int start, int end)
+        public static int SearchFunc(string[] arr, string x, int start, int end)
         {
-            //for (int i = start; i < end; i++)
-            //{
-            //    if (arr[i].Equals(x))
-            //    {
-            //        return i; // Trả về chỉ số của phần tử nếu tìm thấy
-            //    }
-            //}
             while (start < end)
             {
-                if (arr[start].Equals(x))
-                {
-                    return start; // Trả về chỉ số của phần tử nếu tìm thấy
-                }
+                if (arr[start] == x) return start;
                 start++;
             }
-            return -1; // Trả về -1 nếu không tìm thấy phần tử trong phạm vi của luồng
+            return -1;
         }
+
     }
+
 }
