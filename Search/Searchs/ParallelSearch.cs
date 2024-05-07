@@ -12,16 +12,19 @@ namespace Search.Searchs
         {
             int chunkSize = arr.Length / numberThreads;
 
-            int[] arrayResult = new int[numberThreads];
+            int[] arrRes = new int[numberThreads];
 
             Parallel.For(0, numberThreads, i =>
             {
                 int start = i * chunkSize;
-                int end = i == (numberThreads - 1) ? arr.Length : start + chunkSize;
-                arrayResult[i] = SearchFunc(arr, x, start, end);
+                int end = i == numberThreads - 1 ? arr.Length : start + chunkSize;
+                arrRes[i] = SearchFunc(arr, x, start, end);
             });
-            int res = arrayResult.FirstOrDefault(x => x != -1);
-            return res != null ? res : -1;
+
+            int? res = arrRes.FirstOrDefault(x => x != -1);
+
+            return res.HasValue ? res.Value : -1;
+
         }
 
         public static int SearchFunc(string[] arr, string x, int start, int end)

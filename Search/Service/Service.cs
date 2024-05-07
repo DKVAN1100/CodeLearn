@@ -1,7 +1,9 @@
 ﻿using Search.Searchs;
+using Search.Sort;
 using Search.Tree;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +12,25 @@ namespace Search.Service
 {
     public class Service : IService
     {
-        static string[] arr = { "apple", "banana", "cherry", "orange", "strawberry", "f", "e", "h", "l", "g", "j", "q", "p", "m", "b", "a", "d", "s", "v", "n", "t" };
+        static string[] arr = { "w","x","apple", "banana", "cherry", "orange", "strawberry", "f", "e", "h", "l", "g", "j", "q", "p", "m", "b", "a", "d", "s", "v", "n", "t" };
 
         public async Task RunBinarySearch()
         {
 
             Console.Write("Enter the string to search: ");
             string x = Console.ReadLine();
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            QuickSort.QuickSortFunc(arr, 0, arr.Length - 1);
+
+
+            //  BubbleSort.BubbleSortFunc(arr);
+
+            QuickSort.PrintArray(arr);
+            stopwatch.Stop();
+            Console.WriteLine("Thời gian chạy của BubbleSortFunc: " + stopwatch.ElapsedMilliseconds + " ms");
 
             int result = BinarySearch.BinarySearchFunc(arr, x);
             if (result == -1)
